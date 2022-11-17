@@ -1,71 +1,144 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
           name="viewport">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+<!--    <meta content="ie=edge" http-equiv="X-UA-Compatible">-->
     <title>Spring Boot - Thymeleaf</title>
-    <link th:href="@{/main.css}" rel="stylesheet"/>
+    <link th:href="@{https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap}" rel="stylesheet">
+    <link th:href="@{/main.css}" rel="stylesheet" type="text/css"/>
 </head>
-<body class="flex items-center justify-center h-screen">
-<img th:src="@{/img.png}"></br>
-<div class="rounded-lg border shadow-lg p-10 w-3/5">
-    <div class="flex flex-row justify-between pb-4">
-        <div>
-            <h2 class="text-xl font-bold">Order #<span class="text-green-600" th:text="${orderEntry.orderId}"></span>
-            </h2>
-        </div>
-        <div>
-            <div class="text-xl font-bold" th:text="${orderEntry.date}"></div>
-        </div>
-    </div>
-    <div class="flex flex-col pb-8">
-        <div class="pb-2">
-            <h2 class="text-xl font-bold">Delivery Address</h2>
-        </div>
-        <div th:text="${orderEntry.account.address.street}"></div>
-        <div th:text="${orderEntry.account.address.city}"></div>
-        <div th:text="${orderEntry.account.address.state}"></div>
-        <div th:text="${orderEntry.account.address.zipCode}"></div>
-
-    </div>
-    <table class="table-fixed w-full text-right border rounded">
-        <thead class="bg-gray-100">
+<body>
+<table class="logo">
+    <tr>
+        <td class="text-center p-0">
+            <img class="img-1" th:src="@{logo_ubot.png}"/>
+        </td>
+        <td class="text-center p-0">
+            <img class="img-2" th:src="@{logo_fpt.png}"/>
+        </td>
+    </tr>
+</table>
+<div class="w-full text-right">
+    <p>Mẫu số: 1</p>
+    <p>Ký hiệu: C22TCR</p>
+</div>
+<div class="text-center">
+    <h1>Hóa đơn giá trị gia tăng</h1>
+    <p>Ngày 13 tháng 10 năm 2022</p>
+    <p>MCCQT: 00234A43A635E5452E851C7F157271DEF2</p>
+</div>
+<div class="border-top py-2">
+    <p>
+        <strong>Số hóa đơn:&nbsp;</strong>
+        <span>138</span>
+    </p>
+    <p>
+        <strong>Tên người bán:&nbsp;</strong>
+        <span>CÔNG TY CỔ PHẦN</span>
+    </p>
+    <p>
+        <strong>Mã số thuế:&nbsp;</strong>
+        <span>0123456</span>
+    </p>
+    <p>
+        <strong>Địa chỉ:&nbsp;</strong>
+        <span>Hải Phòng là không lòng vòng</span>
+    </p>
+    <p>
+        <strong>Điện thoại:&nbsp;</strong>
+        <span>0123456789</span>
+    </p>
+</div>
+<div class="border-top padding-y">
+    <p>
+        <strong>Tên người mua:&nbsp;</strong>
+        <span>CÔNG TY CỔ PHẦN</span>
+    </p>
+    <p>
+        <strong>Mã số thuế:&nbsp;</strong>
+        <span>0123456</span>
+    </p>
+    <p>
+        <strong>Địa chỉ:&nbsp;</strong>
+        <span>Thái Nguyên gọi Hải Phoòng trả lời</span>
+    </p>
+    <p>
+        <strong>Điện thoại:&nbsp;</strong>
+        <span>0123456789</span>
+    </p>
+    <p>
+        <strong>Đơn vị tiền tệ:&nbsp;</strong>
+        <span>VND</span>
+    </p>
+</div>
+<div>
+    <table class="table-1">
         <tr>
-            <th class="text-left pl-4">Product</th>
-            <th>Qty</th>
-            <th>Price</th>
-            <th class="pr-4">Total</th>
+            <th>STT</th>
+            <th>Hàng hoá, dịch vụ</th>
+            <th>Đơn vị</th>
+            <th>Số lượng</th>
+            <th>Đơn giá</th>
+            <th>Chiết khấu</th>
+            <th>Thuế suất</th>
+            <th>Thành tiền không thuế</th>
         </tr>
-        </thead>
-        <tbody>
-        <tr th:each="item : ${orderEntry.items}">
-            <td class="pl-4 text-left" th:text="${item.name}"></td>
-            <td th:text="${item.quantity}"></td>
-            <td th:text="${item.price}"></td>
-            <td class="pr-4" th:text="${item.price * item.quantity}"></td>
+        <tr>
+            <td>1</td>
+            <td>Máy xúc lật bánh lốp Nhãn hiệu: Lonking Tên thương mại: LG833N Số khung: LFJ0833NKNA605542 Số động cơ: WP6G125E226P22C016483 Nước sản xuất: Trung Quốc Năm sản xuất: 2022</td>
+            <td>Chiếc</td>
+            <td>1</td>
+            <td>629.629.629,6</td>
+            <td>0</td>
+            <td>8%</td>
+            <td>629.629.630</td>
         </tr>
-        </tbody>
     </table>
-    <div class="flex flex-row-reverse p-5">
-        <h2 class="font-medium  bg-gray-200 p-2 rounded">
-            Grand Total: <span class="text-green-600" th:text="${orderEntry.payment.amount}"></span>
-        </h2>
-    </div>
-    <h2 class="text-xl font-bold">Payment Details</h2>
-    <table class="table-fixed text-left w-2/6 border">
+</div>
+<div style="margin-top: 30px">
+    <table class="table-2">
         <tr>
-            <th class="text-green-600">Card Number</th>
-            <td th:text="${orderEntry.payment.cardNumber}"></td>
+            <td>Tổng tiền chưa thuế</td>
+            <td class="text-center">629.629.630</td>
         </tr>
         <tr>
-            <th class="text-green-600">CVV</th>
-            <td th:text="${orderEntry.payment.cvv}"></td>
+            <td>Tổng tiền thuế</td>
+            <td class="text-center">629.629.630</td>
         </tr>
         <tr>
-            <th class="text-green-600">Expires (MM/YYYY)</th>
-            <td th:text="${orderEntry.payment.month +'/'+ orderEntry.payment.year}"></td>
+            <td>Tổng tiền chiết khấu</td>
+            <td class="text-center">629.629.630</td>
+        </tr>
+        <tr>
+            <td>Tổng tiền sau thuế</td>
+            <td class="text-center">629.629.630</td>
+        </tr>
+    </table>
+</div>
+<div class="border-top padding-y">
+    <table class="w-full">
+        <tr>
+            <td class="text-center">
+                <span class="display-block">Người mua hàng</span>
+                <span class="display-block"><em>(Chữ kí số(nếu có))</em></span>
+            </td>
+            <td class="text-center">
+                <span class="display-block">Người bán hàng</span>
+                <span class="display-block"><em>(Chữ kí điện tử, chữ kí số)</em></span>
+                <br />
+                <div class="border p-4" style="width: 50%">
+                    <span class="display-block">Signature Valid</span>
+                    <span class="display-block">Ký bởi: CÔNG TY CỔ PHẦN...</span>
+                    <span class="display-block">Mã NCC: FastCA SHA-256</span>
+                    <span class="display-block">Hiệu lực từ: 22/4/2022</span>
+                    <span class="display-block">Hiệu lực đến: 22/12/2025</span>
+                    <div class="">
+                        <img class="img-3" th:src="@{check-valid.png}"/>
+                    </div>
+                </div>
+            </td>
         </tr>
     </table>
 </div>
