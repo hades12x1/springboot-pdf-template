@@ -274,7 +274,7 @@
           </p>
           <p class="text-center">(Chữ kí điện tử, chữ kí số)</p>
           <!--          th:if="${invoice?.isBuyerSignatureValid}"-->
-          <div th:if="${orderEntry.items}" class="valid-signature">
+          <div th:if="${orderEntry.orderId.equals(1234)}" class="valid-signature">
             <p>Signature Valid</p>
             <p class="pb-0 w-inherit work-break">
               Ký bởi: <span>CÔNG TY TNHH THƯƠNG MẠI VẬN CHUYEN MANH TRUONG</span>
@@ -292,7 +292,7 @@
           </div>
           <!--          th:if="${!invoice?.isBuyerSignatureValid}"-->
           <div
-              th:if="${orderEntry.items}"
+              th:if="${orderEntry.orderId.equals(12341)}"
               class="invalid-signature"
           >
             <p>Signature Invalid</p>
