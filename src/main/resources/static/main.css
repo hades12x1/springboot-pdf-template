@@ -1,130 +1,244 @@
 body {
-  box-sizing: border-box;
-}
-
-body h1, p, span, th, td {
-  font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
 
 h1 {
-  text-transform: uppercase;
-  font-size: 40px;
+    text-transform: uppercase;
+    font-size: 40px;
 }
 
 .logo {
-  width: 70%;
-  margin: auto;
+    width: 70%;
+    margin: auto;
 }
 
 .logo td {
-  padding: 10px;
+    padding: 10px;
 }
 
-.img-1 {
-  width: 80%;
-}
-
-.img-2 {
-  width: 100%;
-}
-
-.img-3 {
-  width: 20%;
-}
-
-.position-relative {
-  position: relative;
-}
-
-.position-absolute {
-  position: absolute;
-}
-
-.text-right {
-  text-align: right;
-}
-
-.border {
-  border: 1px solid #008000;
-}
-
-.p-4 {
-  padding: 4px;
+.bottom-0 {
+    bottom: 0;
 }
 
 .right-0 {
-  right: 0;
+    right: 0;
+}
+
+.left-0 {
+    left: 0;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.border {
+    border: 1px solid #008000;
+}
+
+.p-4 {
+    padding: 4px;
+}
+
+.pb-0 {
+    padding-bottom: 0;
+}
+
+.right-0 {
+    right: 0;
 }
 
 .p-0 {
-  padding: 0;
+    padding: 0;
+}
+
+.m-0 {
+    margin: 0;
+}
+
+.mb-0 {
+    margin-bottom: 0;
 }
 
 .w-full {
-  width: 100%;
+    width: 100%;
 }
 
-.h-70 {
-  height: 70px;
+.w-inherit {
+    width: inherit;
 }
 
-.h-215 {
-  height: 215px;
+.w-50 {
+    width: 50%;
+}
+
+.work-break {
+    word-break: break-word;
+}
+
+.m-auto {
+    margin: auto;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}
+
+.clear-both {
+    clear: both;
 }
 
 .text-center {
-  text-align: center;
+    text-align: center;
 }
 
 .border-top {
-  border-top: 1px solid #d5d5d5;
+    border-top: 1px solid #d5d5d5;
 }
 
 .padding-y {
-  padding: 5px 0;
+    padding: 5px 0;
 }
 
 .table-1 {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-  border: 1px solid #ddd;
-  margin: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    margin: auto;
 }
 
 .table-1 th {
-  background-color: #ed1f24;
-  color: white;
+    background-color: #ed1f24;
+    color: white;
 }
 
 .table-1 th, .table-1 td {
-  text-align: left;
-  padding: 10px;
+    padding: 10px;
+}
+
+.table-1 th {
+    text-align: center;
+}
+
+.table-1 td {
+    text-align: left;
+    word-break: break-word;
 }
 
 .table-1 tr:nth-child(even) {
-  background-color: #f2f2f2;
+    background-color: #f2f2f2;
 }
 
 .table-2 {
-  border-collapse: collapse;
-  border-spacing: 0;
-  border: 1px solid #ddd;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #ddd;
+}
+
+.table-2 th, .table-2 td {
+    padding: 15px;
+}
+
+.table-2 th {
+    text-align: left;
+    background-color: #ed1f24;
+    color: #ffffff;
 }
 
 .table-2 td {
-  padding: 15px;
-}
-
-.table-2 td:nth-child(odd) {
-  background-color: #ed1f24;
-  color: #ffffff;
-}
-
-.table-2 td:nth-child(even) {
-  background-color: #f2f2f2;
+    background-color: #f2f2f2;
 }
 
 .display-block {
-  display: block;
+    display: block;
 }
+
+.title {
+    padding: 10px 0
+}
+
+.title h1 {
+    text-transform: uppercase !important
+}
+
+.m-top-7px {
+    margin-top: 7px;
+}
+
+.section {
+    padding: 5px 15px;
+    border-top: 0.5px solid #d5d5d5;
+    border-bottom: 0.5px solid #d5d5d5
+}
+
+.section div {
+    margin-right: -12px;
+    margin-left: -12px
+}
+
+.my-30px {
+    margin: 30px 0;
+}
+
+.mr-40px {
+    margin-right: 40px;
+}
+
+.ml-90px {
+    margin-left: 90px;
+}
+
+.fs-14px {
+    font-size: 14px;
+}
+
+.buyer-sign {
+    border-top: 0.5px solid #d5d5d5;
+    margin: 20px 0;
+    padding-top: 20px;
+    clear: both
+}
+
+.valid-signature {
+    border: 1px solid green;
+    margin: 10px auto;
+    text-align: left;
+    width: 210px;
+    padding: 0 10px 40px 10px;
+    position: relative;
+}
+
+.invalid-signature {
+    border: 1px solid #ed1f24;
+    margin: 10px auto;
+    text-align: left;
+    padding: 10px;
+    width: 210px;
+    position: relative;
+}
+
+.icon-valid {
+    color: #008003;
+    position: absolute;
+    right: 8px;
+    bottom: 10px
+}
+
+.icon-invalid {
+    position: absolute;
+    right: 0;
+    bottom: 2px
+}
+
+.bottom-text {
+    text-align: center;
+    padding-top: 20px;
+    clear: both;
+}
+
